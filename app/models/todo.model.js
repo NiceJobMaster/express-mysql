@@ -8,6 +8,7 @@ const Todo = todo => {
 };
 
 Todo.create = (newTodo, result) => {
+  sql.query('ALTER TABLE `todo` AUTO_INCREMENT = 1')
   sql.query("INSERT INTO todo SET ?", newTodo, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -34,7 +35,6 @@ Todo.findById = (todoId, result) => {
       return;
     }
 
-    // not found Customer with the id
     result({ kind: "not_found" }, null);
   });
 };

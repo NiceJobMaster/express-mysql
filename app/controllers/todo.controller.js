@@ -6,6 +6,7 @@ exports.create = (req, res) => {
       message: "Content can not be empty!"
     });
   }
+  console.log(req)
 
   const todo = {
   description: req.body.description,
