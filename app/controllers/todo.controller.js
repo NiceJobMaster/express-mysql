@@ -60,9 +60,9 @@ exports.update = (req, res) => {
     });
   }
 
-  todo.updateById(
+  Todo.updateById(
     req.params.todoId,
-    new Todo(req.body),
+    req.body,
     (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
