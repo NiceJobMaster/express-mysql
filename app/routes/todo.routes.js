@@ -1,4 +1,4 @@
-module.exports = app => {
+module.exports = (app) => {
   const todo = require("../controllers/todo.controller.js");
 
   app.post("/todo", todo.create);

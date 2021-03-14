@@ -6,10 +6,10 @@ const db = mysql.createConnection({
   host: dbConfig.HOST,
   user: dbConfig.USER,
   password: dbConfig.PASSWORD,
-  database: dbConfig.DATABASE
+  database: dbConfig.DATABASE,
 });
 
-db.connect(err => {
+db.connect((err) => {
   if (err) {
     console.log("Error connecting to Db");
     return;

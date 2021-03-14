@@ -1,6 +1,6 @@
 const sql = require("./db.js");
 
-const Todo = todo => {
+const Todo = (todo) => {
   this.description = todo.description;
   this.responsible = todo.responsible;
   this.priority = todo.priority;
@@ -8,7 +8,7 @@ const Todo = todo => {
 };
 
 Todo.create = (newTodo, result) => {
-  sql.query('ALTER TABLE `todo` AUTO_INCREMENT = 1')
+  sql.query("ALTER TABLE `todo` AUTO_INCREMENT = 1");
   sql.query("INSERT INTO todo SET ?", newTodo, (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -39,7 +39,7 @@ Todo.findById = (todoId, result) => {
   });
 };
 
-Todo.getAll = result => {
+Todo.getAll = (result) => {
   sql.query("SELECT * FROM todo", (err, res) => {
     if (err) {
       console.log("error: ", err);
@@ -92,7 +92,7 @@ Todo.remove = (id, result) => {
   });
 };
 
-Todo.removeAll = result => {
+Todo.removeAll = (result) => {
   sql.query("DELETE FROM todo", (err, res) => {
     if (err) {
       console.log("error: ", err);
